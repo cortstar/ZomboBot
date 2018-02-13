@@ -8,17 +8,21 @@ import os
 client = discord.Client()
 command_prefix = '~'
 
-inspirational_quotes_directory = "S:/ZomboBot/resources/inspire"
-welcome_quotes_directory = "S:/ZomboBot/resources/welcome"
-full_Zombo_directory = "S:/ZomboBot/resources/full"
 
-zomboQuotes = ['Welcome to Zombo Com.', 'This is Zombo com!', 'Welcome!', 'You can do anything at Zombo Com, anything at all.',
-               'The only limit is yourself.', 'This is Zombo Com, welcome!', 'Welcome to you who have come to Zombo Com!',
-               'Anything is possible at Zombo Com!', 'The infinite is possible at Zombocom!', 'The unattainable is '
-                                                                                             'unknown at Zombo Com!',
-               'Troy sucks at Player Unknown\'s Battlegrounds!']
 
-zomboEmojiUnicode = ['\U0001F1FF', '\U0001F1F4', '\U0001F1F2', "\U0001F1E7", "\U0001F17E"]
+inspirational_quotes_directory = "resources/inspire"
+welcome_quotes_directory = "resources/welcome"
+full_Zombo_directory = "resources/full"
+
+zomboQuotes = []
+
+with open("resources/zombo_quotes.txt") as file:
+    # noinspection PyRedeclaration
+    zomboQuotes = file.readlines()
+    file.close()
+
+zomboEmojiUnicode = ['\U0001F1FF', '\U0001F1F4', '\U0001F1F2', '\U0001F1E7', '\U0001F17E']
+
 
 async def Info(command):
     command = command #type: ZomboCommand.ZomboCommand
