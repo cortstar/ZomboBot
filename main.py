@@ -171,6 +171,7 @@ def get_filepath_of_random_file(directory):
     directory = directory #type: str
     return "{}/{}".format(directory, random.choice(os.listdir(directory)))
 
+#Fake token, use your own...
 client.run('MzczMTkxNDYzNzgzMjM1NTg2.DTbQzQ.xKJ9KXZ64SIIvEnxJVMWWLQnce0')
 
 
